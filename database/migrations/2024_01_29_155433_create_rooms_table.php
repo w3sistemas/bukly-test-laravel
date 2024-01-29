@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->text('description');
 
-            $table->integer('hotel_id')->unsigned();
+            $table->bigInteger('hotel_id')->unsigned();
             $table->foreign('hotel_id')->references('id')->on('hotels');
 
             $table->timestamps();
