@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RoomRequest;
+use App\Models\Hotel;
 use App\Models\Room;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -27,7 +28,9 @@ class RoomController extends Controller
      */
     public function create(): View
     {
-        return view('room.create');
+        $hotels = Hotel::all();
+
+        return view('room.create', compact('hotels'));
     }
 
     /**
@@ -65,7 +68,9 @@ class RoomController extends Controller
      */
     public function edit(Room $room): View
     {
-        return view('room.edit', compact('room'));
+        $hotels = Hotel::all();
+
+        return view('room.edit', compact('room', 'hotels'));
     }
 
     /**
