@@ -20,6 +20,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            @if(Auth::check())
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('hotel.index') }}">Hotéis</a>
@@ -27,7 +28,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('room.index') }}">Quartos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"> | SAIR | </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                </li>
             </ul>
+            @endif
         </div>
     </div>
 </nav>
