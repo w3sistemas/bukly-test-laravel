@@ -9,6 +9,7 @@ Avaliar as habilidades do candidato em Laravel, compreensão e análise de requi
 1. Rodar as migrates ( php artisan migrate )
 1. Rodar o Seeders para as migrates ( php artisan db:seed )
 1. Subir servidor local ( php artisan serve ) e acessar http://127.0.0.1:8000.
+2. Realizar login na plataforma com as credênciais ( Usuário: admin@bukly.vom, Senha: 123456)
 
 Bonus (opcional):
 
